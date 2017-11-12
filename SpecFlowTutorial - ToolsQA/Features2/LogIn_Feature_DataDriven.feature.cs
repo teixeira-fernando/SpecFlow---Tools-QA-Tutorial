@@ -25,7 +25,7 @@ namespace SpecFlowTutorial___ToolsQA.Features2
         
         private Microsoft.VisualStudio.TestTools.UnitTesting.TestContext _testContext;
         
-#line 1 "LogIn_Feature2.feature"
+#line 1 "LogIn_Feature_DataDriven.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -83,7 +83,7 @@ namespace SpecFlowTutorial___ToolsQA.Features2
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SuccessfulLoginWithValidCredentials(string username, string password, string[] exampleTags)
+        public virtual void SuccessfulLoginWithValidCredentialsByDataDrivenTesting(string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -91,7 +91,7 @@ namespace SpecFlowTutorial___ToolsQA.Features2
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login with Valid Credentials", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login with Valid Credentials by Data Driven Testing", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
@@ -109,31 +109,65 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful Login with Valid Credentials: FernandoTeste")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful Login with Valid Credentials by Data Driven Testing: FernandoTeste")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LogIn_Feature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "FernandoTeste")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "FernandoTeste")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "12345678")]
-        public virtual void SuccessfulLoginWithValidCredentials_FernandoTeste()
+        public virtual void SuccessfulLoginWithValidCredentialsByDataDrivenTesting_FernandoTeste()
         {
 #line 7
-this.SuccessfulLoginWithValidCredentials("FernandoTeste", "12345678", ((string[])(null)));
+this.SuccessfulLoginWithValidCredentialsByDataDrivenTesting("FernandoTeste", "12345678", ((string[])(null)));
 #line hidden
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful Login with Valid Credentials: testuser_2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful Login with Valid Credentials by Data Driven Testing: testuser_2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LogIn_Feature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "testuser_2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:username", "testuser_2")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:password", "Test@153")]
-        public virtual void SuccessfulLoginWithValidCredentials_Testuser_2()
+        public virtual void SuccessfulLoginWithValidCredentialsByDataDrivenTesting_Testuser_2()
         {
 #line 7
-this.SuccessfulLoginWithValidCredentials("testuser_2", "Test@153", ((string[])(null)));
+this.SuccessfulLoginWithValidCredentialsByDataDrivenTesting("testuser_2", "Test@153", ((string[])(null)));
 #line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Successful Login with Valid Credentials by Table")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LogIn_Feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag2")]
+        public virtual void SuccessfulLoginWithValidCredentialsByTable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login with Valid Credentials by Table", new string[] {
+                        "mytag2"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("User is at the Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.And("Navigate to LogIn Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Key",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "Username",
+                        "FernandoTeste"});
+            table1.AddRow(new string[] {
+                        "Password",
+                        "12345678"});
+#line 22
+ testRunner.When("User enter credentials", ((string)(null)), table1, "When ");
+#line 26
+ testRunner.And("Click on the LogIn button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.Then("Successful LogIN message should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
@@ -142,11 +176,11 @@ this.SuccessfulLoginWithValidCredentials("testuser_2", "Test@153", ((string[])(n
         public virtual void SuccessfulLogOut()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful LogOut", ((string[])(null)));
-#line 18
+#line 29
 this.ScenarioSetup(scenarioInfo);
-#line 19
+#line 30
  testRunner.When("User LogOut from the Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 31
  testRunner.Then("Successful LogOut message should display", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

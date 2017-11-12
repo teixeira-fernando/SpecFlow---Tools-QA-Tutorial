@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SpecFlowTutorial___ToolsQA.Utils;
 using System;
 using System.Threading;
 using TechTalk.SpecFlow;
@@ -28,6 +29,16 @@ namespace SpecFlowTutorial___ToolsQA.Steps2
         {
             driver.FindElement(By.Id("log")).SendKeys(username);
             driver.FindElement(By.Id("pwd")).SendKeys(password);
+        }
+
+        [When(@"User enter credentials")]
+        public void WhenUserEnterCredentials(Table table)
+        {
+            var dictionary = TableExtensions.ToDictionary(table);
+            var test = dictionary["Username"];
+
+            driver.FindElement(By.Id("log")).SendKeys(dictionary["Username"]);
+            driver.FindElement(By.Id("pwd")).SendKeys(dictionary["Password"]);
         }
 
         [When(@"Click on the LogIn button")]
