@@ -23,11 +23,11 @@ namespace SpecFlowTutorial___ToolsQA.Steps2
             driver.FindElement(By.XPath(".//*[@id='account']/a")).Click();
         }
 
-        [When(@"User enter UserName and Password")]
-        public void WhenUserEnterUserNameAndPassword()
+        [When(@"User enter(.*) and(.*)")]
+        public void WhenUserEnterUserNameAndPassword(string username, string password)
         {
-            driver.FindElement(By.Id("log")).SendKeys("FernandoTeste");
-            driver.FindElement(By.Id("pwd")).SendKeys("12345678");
+            driver.FindElement(By.Id("log")).SendKeys(username);
+            driver.FindElement(By.Id("pwd")).SendKeys(password);
         }
 
         [When(@"Click on the LogIn button")]
